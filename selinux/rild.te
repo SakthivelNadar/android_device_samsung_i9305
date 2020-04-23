@@ -3,3 +3,6 @@ allow rild qmuxd:unix_stream_socket connectto;
 allow rild socket_device:dir { remove_name write add_name };
 allow rild socket_device:sock_file { unlink write create setattr };
 allow rild radio_data_file:lnk_file read;
+allow rild radio_data_file:dir { search };
+allow rild radio_data_file:file { open read write getattr ioctl };
+allow rild sysfs:file { write };
